@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formeo fb</title>
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+
+    <!-- formeo css-->
+    <link
+      rel="stylesheet"
+      href="https://draggable.github.io/formeo/assets/css/formeo.min.css"
+    />
+
+    <link rel="stylesheet" href="./assets/main.css">
+  </head>
+  <body>
+    <div class="container mt-5 mb-5">
+      <div class="row">
+        <div class="col">
+          <div id="formeo-editor" class="containerx"></div>
+          <button
+            id="render"
+            class="btn btn-primary mt-1"
+            style="background-color: #040434; border: none"
+          >
+            Save & Render
+          </button>
+          <a
+            class="btn btn-primary mt-1"
+            href="./rendered.html"
+            style="background-color: #040434; border: none"
+            >Render.html</a
+          >
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <form
+            class="rendered-form"
+            style="visibility: hidden"
+            id="formeo-renderer"
+          ></form>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script src="https://draggable.github.io/formeo/assets/js/formeo.min.js"></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./assets/RenderScript.js"></script>
+
+    <script>
+      //load a temporary saved form else its null.
+      let formData = sessionStorage.getItem("form");
+
+      const editor = new FormeoEditor(
+        {
+          editorContainer: "#formeo-editor",
+          controls: {
+            elements: [
+              {
+                config: {
+                  label: "Column",
+                  hideLabel: true, //if this is false, it creates the first column smaller in size because its goal is to act as just the label/title column
+                },
+                meta: {
+                  group: "layout",
+                  icon: "columns",
+                  id: "layout-column",
+                },
+              },
+              {
+                config: {
+                  label: "Row",
+                  hideLabel: true, //same.
+                },
+                meta: {
+                  group: "layout",
+                  icon: "rows",
+                  id: "layout-row",
+                },
+              },
+            ],
+          },
+
+          svgSprite:
+            "https://draggable.github.io/formeo/assets/img/formeo-sprite.svg",
+        },
+        formData
+      );
+
+      //pass the class name of the rendered form section to the formeorenderer object. remove if the form isn't rendered on this page.
+      const renderer = new FormeoRenderer({
+        renderContainer: $(".rendered-form")[0],
+      });
+
+      $(function () {
+        $("#render").on("click", function () {
+          // remove this function call from here if the rendered section on this page is removed.
+          renderer.render(editor.formData);
+
+          //and this
+          addBootstrapToRenderedForm();
+
+          //saving the rendered form JSON in a temporary session storage. typically this would be a call for a backend endpoint.
+          sessionStorage.setItem("form", JSON.stringify(editor.formData));
+        });
+      });
+    </script>
+  </body>
+</html>

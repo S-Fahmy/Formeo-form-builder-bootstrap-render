@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formeo render</title>
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+
+    <!-- formeo css-->
+    <link
+      rel="stylesheet"
+      href="https://draggable.github.io/formeo/assets/css/formeo.min.css"
+    />
+
+    <link rel="stylesheet" href="./assets/main.css" />
+  </head>
+  <body>
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col">
+          <form
+            class="rendered-form"
+            id="formeo-renderer"
+            style="visibility: hidden"
+          ></form>
+          <a
+            class="btn btn-primary mt-3"
+            href="./index.html"
+            style="background-color: #040434; border: none"
+            >Index</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script src="https://draggable.github.io/formeo/assets/js/formeo.min.js"></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./assets/RenderScript.js"></script>
+
+
+    
+    <script>
+      $(document).ready(function () {
+        //default form.
+        let formData = `{"id":"95e8a829-cc3c-4ba4-be75-b63e9dfbc702","stages":{"cfbe43da-9fc0-436f-9331-b84ebaa71d49":{"children":["761cfec5-e2c0-4a44-9592-b9e8ccf6e3e8","34d9ab05-ca5b-4f85-b87f-cd031c96e287","63b988b3-45ff-41cd-be68-e03be986e536"],"id":"cfbe43da-9fc0-436f-9331-b84ebaa71d49"}},"rows":{"761cfec5-e2c0-4a44-9592-b9e8ccf6e3e8":{"config":{"fieldset":false,"legend":"","inputGroup":false},"children":["0b6acc7c-f305-4fcd-b971-c0d8c20a1508"],"className":["formeo-row"],"id":"761cfec5-e2c0-4a44-9592-b9e8ccf6e3e8"},"34d9ab05-ca5b-4f85-b87f-cd031c96e287":{"config":{"fieldset":false,"legend":"","inputGroup":false},"children":["20f503e0-e403-4be0-adeb-0595285e37b9","3cd20c24-2f72-405b-9f0a-a392868a723e","11ace17d-e005-4a44-a884-fcd7c121e401"],"className":["formeo-row"],"id":"34d9ab05-ca5b-4f85-b87f-cd031c96e287"},"63b988b3-45ff-41cd-be68-e03be986e536":{"config":{"fieldset":false,"legend":"","inputGroup":false},"children":["5f529142-73f1-42e1-9c90-c67deda84470","9561b599-f704-4862-bd02-ec5d05c68e2d"],"className":["formeo-row"],"id":"63b988b3-45ff-41cd-be68-e03be986e536"}},"columns":{"11ace17d-e005-4a44-a884-fcd7c121e401":{"config":{"width":"33.3%"},"children":["bcdf6eac-c476-4847-a3ce-1be904a6acec","fa141d44-325f-4f04-95e7-5d2a7e741334","90e708b4-a306-434a-8b33-46b68995b7a4","77891130-8bd1-41c6-b24b-937e4c27ecf4","275ed5a3-16e4-4ad4-8f4e-b1b9c7620344"],"className":"formeo-column","id":"11ace17d-e005-4a44-a884-fcd7c121e401"},"0b6acc7c-f305-4fcd-b971-c0d8c20a1508":{"config":{"width":"100%"},"children":["977e1d64-6e49-4700-b99b-b914fe269497"],"className":"formeo-column","id":"0b6acc7c-f305-4fcd-b971-c0d8c20a1508"},"20f503e0-e403-4be0-adeb-0595285e37b9":{"config":{"width":"33.3%"},"children":["2a06f110-e299-4b70-ad24-41073f0d8257","cd8535d6-8f40-4572-a65e-5b6dd3a37499"],"className":"formeo-column","id":"20f503e0-e403-4be0-adeb-0595285e37b9"},"9561b599-f704-4862-bd02-ec5d05c68e2d":{"config":{"width":"50%"},"children":["cbc04955-1892-48b2-97e8-e5252334a878"],"className":"formeo-column","id":"9561b599-f704-4862-bd02-ec5d05c68e2d"},"3cd20c24-2f72-405b-9f0a-a392868a723e":{"config":{"width":"33.3%"},"children":["ca2342ff-c5d3-40fe-9341-63c450673daa","6ec7588c-d1e0-4dad-ad80-4c63a8a6deef"],"className":"formeo-column","id":"3cd20c24-2f72-405b-9f0a-a392868a723e"},"5f529142-73f1-42e1-9c90-c67deda84470":{"config":{"width":"50%"},"children":["8ba9d7e2-9667-4268-9de4-eeee30f03fce"],"className":"formeo-column","id":"5f529142-73f1-42e1-9c90-c67deda84470"}},"fields":{"977e1d64-6e49-4700-b99b-b914fe269497":{"conditions":[{"if":[{"source":"","sourceProperty":"value","comparison":"equals","target":"","targetProperty":"value"}],"then":[{"target":"","targetProperty":"value","assignment":"equals","value":""}]}],"tag":"input","attrs":{"required":false,"type":"text","className":""},"config":{"label":"Text Input"},"meta":{"group":"common","icon":"text-input","id":"text-input"},"id":"977e1d64-6e49-4700-b99b-b914fe269497"},"cd8535d6-8f40-4572-a65e-5b6dd3a37499":{"conditions":[{"if":[{"source":"","sourceProperty":"value","comparison":"equals","target":"","targetProperty":"value"}],"then":[{"target":"","targetProperty":"value","assignment":"equals","value":""}]}],"tag":"textarea","config":{"label":"TextArea"},"meta":{"group":"common","icon":"textarea","id":"textarea"},"attrs":{"required":false},"id":"cd8535d6-8f40-4572-a65e-5b6dd3a37499"},"2a06f110-e299-4b70-ad24-41073f0d8257":{"conditions":[{"if":[{"source":"","sourceProperty":"value","comparison":"equals","target":"","targetProperty":"value"}],"then":[{"target":"","targetProperty":"value","assignment":"equals","value":""}]}],"tag":"input","attrs":{"required":false,"type":"text","className":""},"config":{"label":"Text Input"},"meta":{"group":"common","icon":"text-input","id":"text-input"},"id":"2a06f110-e299-4b70-ad24-41073f0d8257"},"cbc04955-1892-48b2-97e8-e5252334a878":{"conditions":[{"if":[{"source":"","sourceProperty":"value","comparison":"equals","target":"","targetProperty":"value"}],"then":[{"target":"","targetProperty":"value","assignment":"equals","value":""}]}],"tag":"input","attrs":{"type":"file","required":false},"config":{"label":"File Upload"},"meta":{"group":"common","icon":"upload","id":"upload"},"id":"cbc04955-1892-48b2-97e8-e5252334a878"},"ca2342ff-c5d3-40fe-9341-63c450673daa":{"conditions":[{"if":[{"source":"","sourceProperty":"value","comparison":"equals","target":"","targetProperty":"value"}],"then":[{"target":"","targetProperty":"value","assignment":"equals","value":""}]}],"tag":"input","attrs":{"required":false,"type":"text","className":""},"config":{"label":"Text Input"},"meta":{"group":"common","icon":"text-input","id":"text-input"},"id":"ca2342ff-c5d3-40fe-9341-63c450673daa"},"8ba9d7e2-9667-4268-9de4-eeee30f03fce":{"conditions":[{"if":[{"source":"","sourceProperty":"value","comparison":"equals","target":"","targetProperty":"value"}],"then":[{"target":"","targetProperty":"value","assignment":"equals","value":""}]}],"tag":"input","attrs":{"required":false,"type":"text","className":""},"config":{"label":"Text Input"},"meta":{"group":"common","icon":"text-input","id":"text-input"},"id":"8ba9d7e2-9667-4268-9de4-eeee30f03fce"},"6ec7588c-d1e0-4dad-ad80-4c63a8a6deef":{"conditions":[{"if":[{"source":"","sourceProperty":"value","comparison":"equals","target":"","targetProperty":"value"}],"then":[{"target":"","targetProperty":"value","assignment":"equals","value":""}]}],"tag":"input","attrs":{"required":false,"type":"text","className":""},"config":{"label":"Text Input"},"meta":{"group":"common","icon":"text-input","id":"text-input"},"id":"6ec7588c-d1e0-4dad-ad80-4c63a8a6deef"},"bcdf6eac-c476-4847-a3ce-1be904a6acec":{"conditions":[{"if":[{"source":"","sourceProperty":"value","comparison":"equals","target":"","targetProperty":"value"}],"then":[{"target":"","targetProperty":"value","assignment":"equals","value":""}]}],"tag":"input","attrs":{"required":false,"type":"text","className":""},"config":{"label":"Text Input"},"meta":{"group":"common","icon":"text-input","id":"text-input"},"id":"bcdf6eac-c476-4847-a3ce-1be904a6acec"},"fa141d44-325f-4f04-95e7-5d2a7e741334":{"conditions":[{"if":[{"source":"","sourceProperty":"value","comparison":"equals","target":"","targetProperty":"value"}],"then":[{"target":"","targetProperty":"value","assignment":"equals","value":""}]}],"tag":"input","attrs":{"required":false,"type":"text","className":""},"config":{"label":"Text Input"},"meta":{"group":"common","icon":"text-input","id":"text-input"},"id":"fa141d44-325f-4f04-95e7-5d2a7e741334"},"90e708b4-a306-434a-8b33-46b68995b7a4":{"conditions":[{"if":[{"source":"","sourceProperty":"value","comparison":"equals","target":"","targetProperty":"value"}],"then":[{"target":"","targetProperty":"value","assignment":"equals","value":""}]}],"tag":"textarea","config":{"label":"TextArea"},"meta":{"group":"common","icon":"textarea","id":"textarea"},"attrs":{"required":false},"id":"90e708b4-a306-434a-8b33-46b68995b7a4"},"77891130-8bd1-41c6-b24b-937e4c27ecf4":{"conditions":[{"if":[{"source":"","sourceProperty":"value","comparison":"equals","target":"","targetProperty":"value"}],"then":[{"target":"","targetProperty":"value","assignment":"equals","value":""}]}],"tag":"input","attrs":{"type":"file","required":false},"config":{"label":"File Upload"},"meta":{"group":"common","icon":"upload","id":"upload"},"id":"77891130-8bd1-41c6-b24b-937e4c27ecf4"},"275ed5a3-16e4-4ad4-8f4e-b1b9c7620344":{"conditions":[{"if":[{"source":"","sourceProperty":"value","comparison":"equals","target":"","targetProperty":"value"}],"then":[{"target":"","targetProperty":"value","assignment":"equals","value":""}]}],"tag":"button","attrs":{"className":[{"label":"grouped","value":"f-btn-group"},{"label":"ungrouped","value":"f-field-group"}]},"config":{"label":"Button","hideLabel":true},"meta":{"group":"common","icon":"button","id":"button"},"options":[{"label":"Button","type":[{"label":"button","type":"button"},{"label":"submit","type":"submit"},{"label":"reset","type":"reset"}],"className":[{"label":"default","value":"","selected":true},{"label":"primary","value":"primary"},{"label":"danger","value":"error"},{"label":"success","value":"success"},{"label":"warning","value":"warning"}]}],"id":"275ed5a3-16e4-4ad4-8f4e-b1b9c7620344"}}}
+  `;
+        let sessionFormData = sessionStorage.getItem("form");
+
+        if (sessionFormData != null && sessionFormData != "") {
+          formData = sessionFormData;
+        }
+
+        const renderer = new FormeoRenderer({
+          renderContainer: $(".rendered-form")[0],
+        });
+
+        renderer.render(JSON.parse(formData));
+        addBootstrapToRenderedForm();
+      });
+    </script>
+  </body>
+</html>
